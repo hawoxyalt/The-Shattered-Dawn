@@ -1,5 +1,4 @@
-from functions import *
-# NOTE TO SELF: please find a better name than functions
+from utils import *
 
 
 # weapon declarations

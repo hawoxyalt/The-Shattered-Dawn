@@ -102,3 +102,27 @@ def AttackSequence(thing1_copy: Being, thing2_copy: Being):
         end_condition = victoryCheck(thing1, thing2)
         if end_condition == 1:
             break
+
+
+class ChoiceMenu:
+    def __init__(self, choices:list):
+        self.choices = choices
+    def run(self):
+        choices = [f"[{i}] {self.choices[i-1]}" for i in range(1, len(self.choices)+1)]
+        while True:
+            for c in choices:
+                print(c)
+            try:
+                choice = int(input())
+            except:
+                print("Please enter a number.")
+                continue
+            if 0 < choice <= len(self.choices):
+                break
+            print("Please choose a valid option.")
+        return choice
+
+
+menu = ChoiceMenu(["Run away", "Attack"])
+out = menu.run()
+print(out)
